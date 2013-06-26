@@ -7,3 +7,4 @@ end
 require "palettetown/color"
 require "palettetown/rule"
 require "palettetown/scheme"
+require "palettetown/cli"

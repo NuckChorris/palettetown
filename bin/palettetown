@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require "palettetown"
+PaletteTown::CLI.start
