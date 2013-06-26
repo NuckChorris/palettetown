@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Palettetown::VERSION
   spec.authors       = ["Peter Lejeck"]
   spec.email         = ["peter.lejeck@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{A simple ruby DSL for writing vim schemes}
+  spec.summary       = %q{A simple ruby DSL for writing vim schemes}
   spec.homepage      = ""
   spec.license       = "MIT"
 
