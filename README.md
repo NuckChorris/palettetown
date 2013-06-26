@@ -20,7 +20,7 @@ hi :LineNr, darker(hi[:Normal][:fg], 10)
 hi :Boolean, :bg => main_bg
 ```
 
-# Planned Features
+## Planned Features
  * Styles (italic, bold, underline)
  * Automatic console color picking
    * Support for entering the hex values of your 16-color set and using 
