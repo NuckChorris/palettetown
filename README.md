@@ -27,6 +27,12 @@ hi :Boolean, :bg => main_bg
  * `desaturate(color, amount)` - Decreases saturation of a color by `amount`%.
  * `spin(color, amount)` - shifts the hue by `amount` degrees.
 
+## Building a palette file
+Once you've written a palette file, you build it into a proper vim theme with 
+the following command:
+
+	$ palettetown build file.rb -o file.vim
+
 ## Planned Features
  * Styles (italic, bold, underline)
  * Automatic console color picking
