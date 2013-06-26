@@ -1,8 +1,10 @@
 class PaletteTown::Color
-  attr :hue, :sat, :lum
+  attr_accessor :hue, :sat, :lum
   def initialize color
     if color.is_a? String
       color = self.class.from_hex(color)
+    elsif color.is_a? PaletteTown::Color
+      color = color.to_h
     elsif color.is_a? Hash
       if color[:hue].nil? or color[:sat].nil? or color[:lum].nil?
         raise ArgumentError
@@ -34,6 +36,13 @@ class PaletteTown::Color
   end
   def to_hex
     "%<r>02x%<g>02x%<b>02x" % to_rgb
+  end
+  def to_h
+    return {
+      :hue => @hue,
+      :sat => @sat,
+      :lum => @lum
+    }
   end
   def to_s
     "##{to_hex}"
