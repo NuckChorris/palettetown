@@ -20,6 +20,13 @@ hi :LineNr, darker(hi[:Normal][:fg], 10)
 hi :Boolean, :bg => main_bg
 ```
 
+### Helpers
+ * `lighter(color, amount)` - Increases luminosity of a color by `amount`%.
+ * `darker(color, amount)` - Decreases luminosity of a color by `amount`%.
+ * `saturate(color, amount)` - Increases saturation of a color by `amount`%.
+ * `desaturate(color, amount)` - Decreases saturation of a color by `amount`%.
+ * `spin(color, amount)` - shifts the hue by `amount` degrees.
+
 ## Planned Features
  * Styles (italic, bold, underline)
  * Automatic console color picking
