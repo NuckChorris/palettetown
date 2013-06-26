@@ -1,7 +1,13 @@
 module PaletteTown
   class Rule
     def [] key
-      @keys[key]
+      if key == :bg
+        @keys[:guibg]
+      elsif key == :fg
+        @keys[:guifg]
+      else
+        @keys[key]
+      end
     end
     def each &block
       @keys.each(&block)

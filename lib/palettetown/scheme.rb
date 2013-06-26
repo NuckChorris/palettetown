@@ -46,9 +46,20 @@ module PaletteTown
         color.hue += amount / 360.0
         color
       end
-      def hi rule, *options
+      def hi *options
+        return @rules if options.length == 0
+
         @rules ||= {}
-        @rules[rule] = PaletteTown::Rule.new(*options)
+        rule = options.shift
+        if options[0].is_a? Hash
+          options = options[0]
+        else
+          options = {
+            :fg => options[0],
+            :bg => options[1]
+          }
+        end
+        @rules[rule] = PaletteTown::Rule.new(options)
       end
       def to_s
         out = <<-EOF
