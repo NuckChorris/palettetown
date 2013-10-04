@@ -1,4 +1,4 @@
-# Palette Town
+# Palette Town [![Gem Version](https://badge.fury.io/rb/palettetown.png)](http://badge.fury.io/rb/palettetown)
 A ruby tool for generating vim color schemes.
 
 ## Palette Files
