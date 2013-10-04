@@ -100,9 +100,9 @@ module PaletteTown
       # I just ported it from the W3C CSS spec
       z += 1 if z < 0
       z -= 1 if z > 1
-      return x + (y - x) * z * 6 if z < 1.0 / 6.0
+      return x + (y - x) * z * 6.0 if z < 1.0 / 6.0
       return y if z < 1.0 / 2.0
-      return x + (y - x) * (2.0 / 3.0 - z * 6) if z < 2.0 / 3.0
+      return x + (y - x) * (2.0 / 3.0 - z) * 6.0 if z < 2.0 / 3.0
       return x
     end
   end
