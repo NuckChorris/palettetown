@@ -25,9 +25,10 @@ module PaletteTown
           @lum + @sat - (@lum * @sat)
         end
         x = @lum * 2.0 - y
-        r = self.class.hue_to_rgb(x, y, @hue + 1.0/3.0)
-        g = self.class.hue_to_rgb(x, y, @hue)
-        b = self.class.hue_to_rgb(x, y, @hue - 1.0/3.0)
+        # Why are we using 2pi here?  Because we're using Radians, bitch.
+        r = self.class.hue_to_rgb(x, y, @hue * Math::PI * 2 + 1.0/3.0)
+        g = self.class.hue_to_rgb(x, y, @hue * Math::PI * 2)
+        b = self.class.hue_to_rgb(x, y, @hue * Math::PI * 2 - 1.0/3.0)
       end
       return {
         :r => (r * 255).to_i,
@@ -92,6 +93,7 @@ module PaletteTown
           hue += 4
         end
         hue /= 6
+        hue *= Math.PI * 2  # Convert 0..1 into radians
       end
       return {hue: hue, sat: sat, lum: lum}
     end

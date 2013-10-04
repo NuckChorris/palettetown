@@ -43,7 +43,7 @@ module PaletteTown
       end
       def spin color, amount
         color = PaletteTown::Color.new color unless color.is_a? PaletteTown::Color
-        color.hue += amount / 360.0
+        color.hue += amount
         color
       end
       def hi *options
