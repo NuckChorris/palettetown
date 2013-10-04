@@ -4,6 +4,8 @@ module PaletteTown
     def initialize color
       if color.is_a? String
         color = self.class.from_hex(color)
+      elsif color.is_a? Fixnum
+        color = self.class.from_hex("%06x" % color)
       elsif color.is_a? PaletteTown::Color
         color = color.to_h
       elsif color.is_a? Hash
