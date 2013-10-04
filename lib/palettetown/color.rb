@@ -55,9 +55,9 @@ module PaletteTown
     private
     def self.from_hex color
       color.shift if color[0] == '#'
-      r = color[0...2].to_i 16
-      g = color[2...4].to_i 16
-      b = color[4...6].to_i 16
+      r = color[0..1].to_i 16
+      g = color[2..3].to_i 16
+      b = color[4..5].to_i 16
 
       from_rgb(r, g, b)
     end
