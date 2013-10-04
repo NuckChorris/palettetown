@@ -93,7 +93,7 @@ module PaletteTown
           hue += 4
         end
         hue /= 6
-        hue *= Math.PI * 2  # Convert 0..1 into radians
+        hue *= Math::PI * 2  # Convert 0..1 into radians
       end
       return {hue: hue, sat: sat, lum: lum}
     end
