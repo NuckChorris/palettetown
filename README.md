@@ -16,16 +16,21 @@ description 'the most super kawaii theme ever'
 main_bg = "00FF00"
 
 hi :Normal, "0000FF", main_bg
-hi :LineNr, darker(hi[:Normal][:fg], 10)
+hi :LineNr, darker(hi[:Normal][:fg], 10.percent)
+hi :String, spin(hi[:Normal][:bg], 90.degrees)
 hi :Boolean, :bg => main_bg
 ```
 
 ### Helpers
- * `lighter(color, amount)` - Increases luminosity of a color by `amount`%.
- * `darker(color, amount)` - Decreases luminosity of a color by `amount`%.
- * `saturate(color, amount)` - Increases saturation of a color by `amount`%.
- * `desaturate(color, amount)` - Decreases saturation of a color by `amount`%.
- * `spin(color, amount)` - shifts the hue by `amount` degrees.
+ * `lighter(color, amount)` - Increases luminosity of a color by `amount`.
+ * `darker(color, amount)` - Decreases luminosity of a color by `amount`.
+ * `saturate(color, amount)` - Increases saturation of a color by `amount`.
+ * `desaturate(color, amount)` - Decreases saturation of a color by `amount`.
+ * `spin(color, amount)` - shifts the hue by `amount` radians.
+
+#### Monkeypatches
+ * `Fixnum#degrees` - provides a simple expression of degrees, returned in radians
+ * `Fixnum#percent` - provides a simple expression of percent, returned as a decimal
 
 ## Building a palette file
 Once you've written a palette file, you build it into a proper vim theme with 
