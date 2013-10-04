@@ -24,22 +24,22 @@ module PaletteTown
       end
       def lighter color, amount
         color = PaletteTown::Color.new color unless color.is_a? PaletteTown::Color
-        color.lum += amount / 100.0
+        color.lum *= 1.0 - amount
         color
       end
       def darker color, amount
         color = PaletteTown::Color.new color unless color.is_a? PaletteTown::Color
-        color.lum -= amount / 100.0
+        color.lum *= 1.0 - amount
         color
       end
       def saturate color, amount
         color = PaletteTown::Color.new color unless color.is_a? PaletteTown::Color
-        color.sat += amount / 100.0
+        color.sat *= 1.0 + amount
         color
       end
       def desaturate color, amount
         color = PaletteTown::Color.new color unless color.is_a? PaletteTown::Color
-        color.sat -= amount / 100.0
+        color.sat *= 1.0 - amount
       end
       def spin color, amount
         color = PaletteTown::Color.new color unless color.is_a? PaletteTown::Color
